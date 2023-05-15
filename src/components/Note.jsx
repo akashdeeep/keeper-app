@@ -4,12 +4,14 @@ import React from "react";
 // import "./Note.css";
 
 function Note(props) {
+	function handleClick() {
+		props.onDelete(props.id);
+	}
 	return (
 		<div className="note">
-			<h1 className="note__title"> {props.note_title}</h1>
-			<p className="note__content">{props.note_content}</p>
-			{/* <div className="note__date">Note date</div>
-			<div className="note__delete">Delete</div> */}
+			<h1> {props.title}</h1>
+			<p>{props.content}</p>
+			<button onClick={handleClick}>DELETE</button>
 		</div>
 	);
 }
